@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SBT.Database.Entities
 {
@@ -13,7 +12,6 @@ namespace SBT.Database.Entities
 
         public int GameId { get; set; }
 
-        [Column(TypeName = "varchar(50)")]
         public string AccountEmail { get; set; }
 
         public Game Game { get; set; }

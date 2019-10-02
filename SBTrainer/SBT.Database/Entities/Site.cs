@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SBT.Database.Entities
 {
     public class Site
     {
-        [Column(TypeName = "varchar(10)")]
         public string Id { get; set; }
 
-        [Column(TypeName = "varchar(30)")]
         public string Name { get; set; }
 
         public int LastUpdate { get; set; }
