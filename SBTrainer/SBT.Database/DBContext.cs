@@ -20,16 +20,16 @@ namespace SBT.Database
             modelBuilder.ApplyConfiguration(new AccountEntityConfiguration());
         }
 
-        DbSet<Sport> Sports { get; set; }
+        public DbSet<Sport> Sports { get; set; }
 
-        DbSet<SportData> SportData { get; set; }
+        public DbSet<SportData> SportData { get; set; }
 
-        DbSet<Game> Games { get; set; }
+        public DbSet<Game> Games { get; set; }
 
-        DbSet<Site> Sites { get; set; }
+        public DbSet<Site> Sites { get; set; }
 
-        DbSet<Bet> Bets { get; set; }
+        public DbSet<Bet> Bets { get; set; }
 
-        DbSet<Account> Accounts { get; set; }
+        public DbSet<Account> Accounts { get; set; }
     }
 }
