@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --green: green;
+}
+
+body {
+    font-family: 'Adamina';
+}
+
+a,
+a:hover {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.bg-green-other {
+  background: var(--green);
+}
+
+.icons {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  -webkit-transition: color 1s, -webkit-transform 2s;
+  -moz-transition:    color 1s;
+  -ms-transition:     color 1s;
+  -o-transition:      color 1s;
+  transition:         color 1s,  transform 2s;
+}
+.icons:hover {
+  color: var(--green);
+  -webkit-transform: rotateZ(20deg);
+  transform: rotateZ(20deg);
+}
+
+.col-new {
+  position: relative;
+  width: 100%;
+}
+
+.text-green {
+  color: var(--green);
+}
+
+.p-70 {
+  padding: 70px 0;
+}
+
+.container-fluid-max {
+  max-width: 1440px;
+}
+
+.cover {
+  background: no-repeat center/cover;
+}
+
+.scroll .page-header {
+  background: var(--green);
+}
+
+.page-header {
+  transition: background 0.5s ease-in-out;
+}
+
+.page-header .navbar {
+  padding: 1rem 0;
+}
+
+.page-header .navbar-toggler {
+  border-color: white;
+}
+
+.bg-green {
+  background: rgba(2, 105, 71, 0.83);
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+}
+
+.bg-white {
+  background: rgba(2, 105, 71, 0.83);
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+}
+
+
+@media screen and (max-width: 991px) {
+  .page-header {
+    background: var(--green);
+  }
+}
+
+.scroll .hero {
+  transform: scale(0.98);
+}
+
+.hero {
+  background-attachment: fixed;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero .container-fluid {
+  z-index: 10;
+}
+
+.pd {
+  margin-top: 70px;
+}
+
+div.container4 {
+    height: 10em;
+    position: relative }
+div.container4 h1 {
+    margin: 0;
+    background: rgba(255, 255, 255, 0.83);
+  	box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+    padding: 30px 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }
