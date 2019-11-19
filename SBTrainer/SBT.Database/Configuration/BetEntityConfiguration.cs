@@ -27,6 +27,16 @@ namespace SBT.Database.Configuration
                 .IsRequired();
 
             builder
+                .Property(x => x.Type)
+                .HasColumnType("varchar(20)")
+                .IsRequired();
+
+            builder
+                .Property(x => x.Result)
+                .HasColumnType("varchar(10)")
+                .IsRequired(false);
+
+            builder
                 .Property(x => x.AccountEmail)
                 .HasColumnType("varchar(50)");
 

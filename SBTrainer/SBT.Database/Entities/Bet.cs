@@ -9,6 +9,10 @@ namespace SBT.Database.Entities
         public float Coefficient { get; set; }
 
         public float Money { get; set; }
+        
+        public string Type { get; set; }
+
+        public string Result { get; set; }
 
         public int GameId { get; set; }
 
