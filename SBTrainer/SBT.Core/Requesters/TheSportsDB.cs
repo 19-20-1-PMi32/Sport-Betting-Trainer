@@ -3,7 +3,7 @@ using System.IO;
 
 namespace SBT.Core.Requesters
 {
-    class TheSportsDB
+    public class TheSportsDB
     {
         private static readonly string host;
 

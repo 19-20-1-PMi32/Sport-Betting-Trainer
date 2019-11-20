@@ -4,7 +4,7 @@ using System.IO;
 
 namespace SBT.Core.Requesters
 {
-    class OddsApi
+    public class OddsApi
     {
         private static readonly string token;
         private static readonly string host;
