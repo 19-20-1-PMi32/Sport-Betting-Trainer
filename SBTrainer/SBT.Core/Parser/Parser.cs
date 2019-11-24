@@ -6,27 +6,27 @@ namespace SBT.Core.Parser
 {
     class Parser
     {
-        public object[] ParseSports(string jsonResponse)
+        public DTO.SportData[] ParseSports(string jsonResponse)
         {
             JObject json = JObject.Parse(jsonResponse);
             if ((bool)json["success"])
             {
-                List<object> result = new List<object>();
+                List<DTO.SportData> result = new List<DTO.SportData>();
                 foreach (var sportInfo in json["data"])
                 {
-                    result.Add(new {
-                        isActive = (string)sportInfo["active"],
-                        group = (string)sportInfo["group"],
-                        details = (string)sportInfo["details"],
-                        title = (string)sportInfo["title"],
-                        sportId = (string)sportInfo["key"]
+                    result.Add(new DTO.SportData() {
+                        IsActive = (bool)sportInfo["active"],
+                        Group = (string)sportInfo["group"],
+                        Details = (string)sportInfo["details"],
+                        Title = (string)sportInfo["title"],
+                        SportId = (string)sportInfo["key"]
                     });
                 }
                 return result.ToArray();
             }
             else
             {
-                return null;
+                return new DTO.SportData[0];
             }
         }
 
@@ -38,14 +38,14 @@ namespace SBT.Core.Parser
                 List<DTO.GameCoefs> result = new List<DTO.GameCoefs>();
                 foreach (var data in json["data"])
                 {
-                    List<object> sitesInfo = new List<object>();
+                    List<DTO.SiteInfo> sitesInfo = new List<DTO.SiteInfo>();
                     foreach (var site in data["sites"])
                     {
-                        sitesInfo.Add(new {
-                            name = (string)site["site_nice"],
-                            lastUpdate = (int)site["last_update"],
-                            firstWinCoef = (float)site["odds"]["h2h"][0],
-                            secondWinCoef = (float)site["odds"]["h2h"][1],
+                        sitesInfo.Add(new DTO.SiteInfo() {
+                            Name = (string)site["site_nice"],
+                            LastUpdate = (int)site["last_update"],
+                            FirstWinCoef = (float)site["odds"]["h2h"][0],
+                            SecondWinCoef = (float)site["odds"]["h2h"][1],
                         });
                     }
                     result.Add(new DTO.GameCoefs() {
