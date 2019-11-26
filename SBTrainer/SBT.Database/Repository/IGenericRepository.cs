@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace SBT.Database.Repository
 {
-    interface IGenericRepository<TEntity> 
+    public interface IGenericRepository<TEntity> 
         where TEntity: class
     {
         Task<IEnumerable<TEntity>> GetAll();

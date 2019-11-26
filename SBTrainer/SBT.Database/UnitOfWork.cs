@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SBT.Database
 {
-    class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly DBContext _dbContext;
 
