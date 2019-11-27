@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SBT.Core.Requesters.Test", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SBT.Database.Test", "Tests\SBT.Database.Test\SBT.Database.Test.csproj", "{6CDB66D9-D9FD-47E7-B126-AC84627CFC3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{20E0E143-84B2-47D5-94C7-FE38FA979E0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBT.BusinessLogic", "SBT.BusinessLogic\SBT.BusinessLogic.csproj", "{20E0E143-84B2-47D5-94C7-FE38FA979E0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
