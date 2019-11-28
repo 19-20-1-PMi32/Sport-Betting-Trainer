@@ -1,12 +1,11 @@
 ﻿using Newtonsoft.Json.Linq;
-using System;
 using System.Collections.Generic;
 
 namespace SBT.Core.Parser
 {
-    class Parser
+    public static class Parser
     {
-        public DTO.SportData[] ParseSports(string jsonResponse)
+        public static DTO.SportData[] ParseSports(string jsonResponse)
         {
             JObject json = JObject.Parse(jsonResponse);
             if ((bool)json["success"])
@@ -30,7 +29,7 @@ namespace SBT.Core.Parser
             }
         }
 
-        public DTO.GameCoefs[] ParseOdds(string jsonResponse)
+        public static DTO.GameCoefs[] ParseOdds(string jsonResponse)
         {
             JObject json = JObject.Parse(jsonResponse);
             if ((bool)json["success"])
@@ -62,7 +61,7 @@ namespace SBT.Core.Parser
             }
         }
 
-        public DTO.GameResult[] ParseEvents(string jsonResponse)
+        public static DTO.GameResult[] ParseEvents(string jsonResponse)
         {
             JObject json = JObject.Parse(jsonResponse);
             List<DTO.GameResult> result = new List<DTO.GameResult>();

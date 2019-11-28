@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SBT.BusinessLogic\SBT.BusinessLogic.csproj" />
     <ProjectReference Include="..\SBT.Database\SBT.Database.csproj" />
   </ItemGroup>
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SBT.BusinessLogic.Services
 {
-    class AccountService : IAccountService
+    public class AccountService : IAccountService
     {
         private readonly IUnitOfWork _unitOfWork;
 
