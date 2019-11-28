@@ -73,7 +73,9 @@ namespace SBT.Database.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("SportDataId");
+                    b.Property<string>("SportDataId")
+                        .IsRequired()
+                        .HasColumnType("varchar(45)");
 
                     b.Property<string>("Team1")
                         .IsRequired()
@@ -134,9 +136,9 @@ namespace SBT.Database.Migrations
 
             modelBuilder.Entity("SBT.Database.Entities.SportData", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("varchar(45)");
 
                     b.Property<string>("Details")
                         .IsRequired()

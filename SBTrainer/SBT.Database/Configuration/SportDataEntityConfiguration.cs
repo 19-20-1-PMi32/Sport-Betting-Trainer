@@ -16,7 +16,8 @@ namespace SBT.Database.Configuration
 
             builder
                 .Property(x => x.Id)
-                .ValueGeneratedOnAdd();
+                .HasColumnType("varchar(45)")
+                .IsRequired();
 
             builder
                 .Property(x => x.IsActive)

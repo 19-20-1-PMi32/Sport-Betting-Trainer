@@ -36,8 +36,7 @@ namespace SBT.Database.Migrations
                 name: "SportData",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Id = table.Column<string>(type: "varchar(45)", nullable: false),
                     IsActive = table.Column<bool>(nullable: false),
                     Group = table.Column<string>(type: "varchar(20)", nullable: false),
                     Details = table.Column<string>(type: "varchar(50)", nullable: false),
@@ -63,7 +62,7 @@ namespace SBT.Database.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Team1 = table.Column<string>(type: "varchar(20)", nullable: false),
                     Team2 = table.Column<string>(type: "varchar(20)", nullable: false),
-                    SportDataId = table.Column<int>(nullable: false)
+                    SportDataId = table.Column<string>(type: "varchar(45)", nullable: false)
                 },
                 constraints: table =>
                 {

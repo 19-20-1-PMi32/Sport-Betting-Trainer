@@ -29,6 +29,11 @@ namespace SBT.Database.Configuration
                 .IsRequired();
 
             builder
+                .Property(x => x.SportDataId)
+                .HasColumnType("varchar(45)")
+                .IsRequired();
+
+            builder
                 .HasOne(x => x.SportData)
                 .WithMany(x => x.Games)
                 .HasForeignKey(x => x.SportDataId);

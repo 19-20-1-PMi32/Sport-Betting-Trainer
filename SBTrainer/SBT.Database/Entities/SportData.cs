@@ -5,7 +5,7 @@ namespace SBT.Database.Entities
 {
     public class SportData
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public bool IsActive { get; set; }
 
