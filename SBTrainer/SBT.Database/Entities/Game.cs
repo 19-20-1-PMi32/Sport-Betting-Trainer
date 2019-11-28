@@ -11,6 +11,8 @@ namespace SBT.Database.Entities
 
         public string Team2 { get; set; }
 
+		public int CommenceTime { get; set; }
+
         public string SportDataId { get; set; }
 
         public SportData SportData { get; set; }

@@ -47,9 +47,10 @@ namespace SBT.Core.Parser
                             SecondWinCoef = (float)site["odds"]["h2h"][1],
                         });
                     }
-                    result.Add(new DTO.GameCoefs() {
-                        Team1 = (string)data["teams"][0],
-                        Team2 = (string)data["teams"][1],
+					result.Add(new DTO.GameCoefs() {
+						Team1 = (string)data["teams"][0],
+						Team2 = (string)data["teams"][1],
+						CommenceTime = (int)data["commence_time"],
                         SitesInfo = sitesInfo
                     });
                 }
