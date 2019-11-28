@@ -142,7 +142,7 @@ namespace SBT.Database.Migrations
 
                     b.Property<string>("Details")
                         .IsRequired()
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar(75)");
 
                     b.Property<string>("Group")
                         .IsRequired()
@@ -155,7 +155,7 @@ namespace SBT.Database.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("varchar(20)");
+                        .HasColumnType("varchar(45)");
 
                     b.HasKey("Id");
 

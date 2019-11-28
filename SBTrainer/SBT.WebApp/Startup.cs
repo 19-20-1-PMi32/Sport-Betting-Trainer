@@ -35,7 +35,7 @@ namespace SBT.WebApp
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddHostedService<DatabaseUpdateService>();
+            services.AddHostedService<SportsUpdateService>();
 
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())

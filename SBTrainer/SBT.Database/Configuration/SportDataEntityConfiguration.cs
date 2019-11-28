@@ -30,12 +30,12 @@ namespace SBT.Database.Configuration
 
             builder
                 .Property(x => x.Details)
-                .HasColumnType("varchar(50)")
+                .HasColumnType("varchar(75)")
                 .IsRequired();
 
             builder
                 .Property(x => x.Title)
-                .HasColumnType("varchar(20)")
+                .HasColumnType("varchar(45)")
                 .IsRequired();
 
             builder

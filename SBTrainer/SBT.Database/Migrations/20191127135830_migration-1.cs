@@ -39,8 +39,8 @@ namespace SBT.Database.Migrations
                     Id = table.Column<string>(type: "varchar(45)", nullable: false),
                     IsActive = table.Column<bool>(nullable: false),
                     Group = table.Column<string>(type: "varchar(20)", nullable: false),
-                    Details = table.Column<string>(type: "varchar(50)", nullable: false),
-                    Title = table.Column<string>(type: "varchar(20)", nullable: false),
+                    Details = table.Column<string>(type: "varchar(75)", nullable: false),
+                    Title = table.Column<string>(type: "varchar(45)", nullable: false),
                     SportId = table.Column<string>(type: "varchar(10)", nullable: true)
                 },
                 constraints: table =>
