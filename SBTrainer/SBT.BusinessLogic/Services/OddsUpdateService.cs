@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using SBT.Core.Parser;
 using SBT.Core.Requesters;
+using System;
 
 namespace SBT.BusinessLogic.Services
 {
@@ -25,6 +26,8 @@ namespace SBT.BusinessLogic.Services
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            await Task.Delay(15000); // prevents concurrent access
+
             _logger.LogDebug("Odds update service is starting.");
 
             stoppingToken.Register(() =>
@@ -51,48 +54,92 @@ namespace SBT.BusinessLogic.Services
 
         private async Task UpdateOdd(Database.Entities.SportData sportData)
         {
+            //int currentTime = (int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
+            int currentTime = 1571000000;
+
             _logger.LogDebug("OddsApi requester: GetOdds(sportData.Id).");
             // var oddsJson = OddsApi.GetOdds(sportData.Id);
             var oddsJson = File.ReadAllText("TestData/odds.json");
 
             _logger.LogDebug("GameRepository: GetAll().");
             var gameInDatabase = (await _unitOfWork.GameRepository.GetAll())
-                .Where(x => x.SportDataId == sportData.Id);
+                .Where(x => x.SportDataId == sportData.Id && x.CommenceTime > currentTime).ToArray();
+
+            _logger.LogDebug("SiteRepository: GetAll().");
+            var siteInDatabase = (await _unitOfWork.SiteRepository.GetAll()).ToArray();
 
             _logger.LogDebug("Parser: ParseOdds(oddsJson).");
-            var oddsData = Parser.ParseOdds(oddsJson);
+            var oddsData = Parser.ParseOdds(oddsJson)
+                .Where(x => x.CommenceTime > currentTime).ToArray();
 
             foreach (var oddData in oddsData)
             {
-                var game = new Database.Entities.Game()
-                {
-                    Team1 = oddData.Team1,
-                    Team2 = oddData.Team2,
-                    SportDataId = sportData.Id
-                };
+                var game = gameInDatabase
+                    .Where(x => x.Team1 == oddData.Team1
+                        && x.Team2 == oddData.Team2
+                        && x.CommenceTime == oddData.CommenceTime)
+                    .SingleOrDefault();
+                var gameId = 0;
 
-                _logger.LogDebug("GameRepository: Insert(game).");
-                _unitOfWork.GameRepository.Insert(game);
-
-                foreach (var siteInfo in oddData.SitesInfo)
+                if (game == null)
                 {
-                    var site = new Database.Entities.Site()
+                    game = new Database.Entities.Game()
                     {
-                        Name = siteInfo.Name,
-                        LastUpdate = siteInfo.LastUpdate,
-                        FirstWin = siteInfo.FirstWinCoef,
-                        SecondWin = siteInfo.SecondWinCoef,
-                        Draw = (siteInfo.FirstWinCoef + siteInfo.SecondWinCoef) / 2.0f,
-                        GameId = game.Id
+                        Team1 = oddData.Team1,
+                        Team2 = oddData.Team2,
+                        CommenceTime = oddData.CommenceTime,
+                        SportDataId = sportData.Id
                     };
 
-                    _logger.LogDebug("SiteRepository: Insert(site).");
-                    _unitOfWork.SiteRepository.Insert(site);
-                }
-            }
+                    _logger.LogDebug("GameRepository: Insert(game).");
+                    _unitOfWork.GameRepository.Insert(game);
 
-            _logger.LogDebug("UintOfWork: Commit().");
-            await _unitOfWork.Commit();
+                    _logger.LogDebug("UintOfWork: Commit().");
+                    await _unitOfWork.Commit();
+
+                    gameId = game.Id;
+                }
+                else
+                {
+                    gameId = game.Id;
+                }
+
+                var sites = siteInDatabase.Where(x => x.GameId == gameId);
+                
+                foreach (var siteInfo in oddData.SitesInfo)
+                {
+                    var site = sites.Where(x => x.Name == siteInfo.Name).SingleOrDefault();
+
+                    if (site != null)
+                    {
+                        site.FirstWin = siteInfo.FirstWinCoef;
+                        site.SecondWin = siteInfo.SecondWinCoef;
+                        site.Draw = (siteInfo.FirstWinCoef + siteInfo.SecondWinCoef) / 2.0f;
+                        site.LastUpdate = siteInfo.LastUpdate;
+
+                        _logger.LogDebug("SiteRepository: Update(site).");
+                        _unitOfWork.SiteRepository.Update(site);
+                    }
+                    else
+                    {
+                        site = new Database.Entities.Site()
+                        {
+                            Name = siteInfo.Name,
+                            LastUpdate = siteInfo.LastUpdate,
+                            FirstWin = siteInfo.FirstWinCoef,
+                            SecondWin = siteInfo.SecondWinCoef,
+                            Draw = (siteInfo.FirstWinCoef + siteInfo.SecondWinCoef) / 2.0f,
+                            GameId = gameId
+                        };
+
+                        _logger.LogDebug("SiteRepository: Insert(site).");
+                        _unitOfWork.SiteRepository.Insert(site);
+                    }
+                }
+
+                _logger.LogDebug("UintOfWork: Commit().");
+                await _unitOfWork.Commit();
+            }
         }
     }
 }
