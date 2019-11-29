@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SBT.BusinessLogic.Services;
 
 namespace SBT.WebApp
 {
@@ -34,6 +35,8 @@ namespace SBT.WebApp
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddHostedService<SportsUpdateService>();
+            services.AddHostedService<OddsUpdateService>();
 
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -45,6 +48,8 @@ namespace SBT.WebApp
 
             var builder = new ContainerBuilder();
             builder.Populate(services);
+
+            builder.RegisterModule<BusinessLogic.DependencyModule>();
 
             AutofacContainer = builder.Build();
 

@@ -1,0 +1,197 @@
+﻿{
+  "success": true,
+  "data": [
+    {
+      "sport_key": "soccer_uefa_champs_league",
+      "sport_nice": "UEFA Champions",
+      "teams": [ "Ajax", "Chelsea" ],
+      "commence_time": 1571849700,
+      "home_team": "Ajax",
+      "sites": [
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1571817315,
+          "odds": {
+            "h2h": [ 2.36, 3.05, 3.64 ]
+          }
+        },
+        {
+          "site_key": "onexbet",
+          "site_nice": "1xBet",
+          "last_update": 1571817336,
+          "odds": {
+            "h2h": [ 2.37, 3.07, 3.68 ]
+          }
+        },
+        {
+          "site_key": "paddypower",
+          "site_nice": "Paddy Power",
+          "last_update": 1571817020,
+          "odds": {
+            "h2h": [ 2.3, 2.88, 3.5 ]
+          }
+        },
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1571817225,
+          "odds": {
+            "h2h": [ 2.4, 2.85, 3.65 ]
+          }
+        },
+        {
+          "site_key": "sport888",
+          "site_nice": "888sport",
+          "last_update": 1571817308,
+          "odds": {
+            "h2h": [ 2.43, 2.88, 3.7 ]
+          }
+        },
+        {
+          "site_key": "skybet",
+          "site_nice": "Sky Bet",
+          "last_update": 1571817354,
+          "odds": {
+            "h2h": [ 2.3, 2.9, 3.6 ]
+          }
+        },
+        {
+          "site_key": "betvictor",
+          "site_nice": "Bet Victor",
+          "last_update": 1571817326,
+          "odds": {
+            "h2h": [ 2.38, 2.9, 3.7 ]
+          }
+        },
+        {
+          "site_key": "betfair",
+          "site_nice": "Betfair",
+          "last_update": 1571817276,
+          "odds": {
+            "h2h": [ 2.44, 3, 3.8 ],
+            "h2h_lay": [ 2.46, 3.05, 3.85 ]
+          }
+        },
+        {
+          "site_key": "matchbook",
+          "site_nice": "Matchbook",
+          "last_update": 1571817354,
+          "odds": {
+            "h2h": [ 2.43, 3.04, 3.78 ],
+            "h2h_lay": [ 2.45, 3.06, 3.8 ]
+          }
+        },
+        {
+          "site_key": "williamhill",
+          "site_nice": "William Hill",
+          "last_update": 1571817322,
+          "odds": {
+            "h2h": [ 2.3, 2.9, 3.6 ]
+          }
+        },
+        {
+          "site_key": "ladbrokes",
+          "site_nice": "Ladbrokes",
+          "last_update": 1571817318,
+          "odds": {
+            "h2h": [ 2.3, 2.8, 3.6 ]
+          }
+        }
+      ],
+      "sites_count": 11
+    },
+    {
+      "sport_key": "soccer_uefa_champs_league",
+      "sport_nice": "UEFA Champions",
+      "teams": [ "Barcelona", "Slavia Praha" ],
+      "commence_time": 1571857200,
+      "home_team": "Slavia Praha",
+      "sites": [
+        {
+          "site_key": "onexbet",
+          "site_nice": "1xBet",
+          "last_update": 1571817336,
+          "odds": {
+            "h2h": [ 1.46, 7.4, 5 ]
+          }
+        },
+        {
+          "site_key": "paddypower",
+          "site_nice": "Paddy Power",
+          "last_update": 1571817020,
+          "odds": {
+            "h2h": [ 1.4, 7.5, 4.5 ]
+          }
+        },
+        {
+          "site_key": "marathonbet",
+          "site_nice": "Marathon Bet",
+          "last_update": 1571817315,
+          "odds": {
+            "h2h": [ 1.42, 7.6, 5.25 ]
+          }
+        },
+        {
+          "site_key": "unibet",
+          "site_nice": "Unibet",
+          "last_update": 1571817225,
+          "odds": {
+            "h2h": [ 1.4, 7.5, 5.1 ]
+          }
+        },
+        {
+          "site_key": "sport888",
+          "site_nice": "888sport",
+          "last_update": 1571817308,
+          "odds": {
+            "h2h": [ 1.41, 7.5, 5.2 ]
+          }
+        },
+        {
+          "site_key": "betvictor",
+          "site_nice": "Bet Victor",
+          "last_update": 1571817326,
+          "odds": {
+            "h2h": [ 1.4, 8, 5 ]
+          }
+        },
+        {
+          "site_key": "betfair",
+          "site_nice": "Betfair",
+          "last_update": 1571817276,
+          "odds": {
+            "h2h": [ 1.47, 8, 5 ],
+            "h2h_lay": [ 1.48, 8.4, 5.1 ]
+          }
+        },
+        {
+          "site_key": "matchbook",
+          "site_nice": "Matchbook",
+          "last_update": 1571817354,
+          "odds": {
+            "h2h": [ 1.47, 8, 5 ],
+            "h2h_lay": [ 1.47, 8.4, 5.2 ]
+          }
+        },
+        {
+          "site_key": "williamhill",
+          "site_nice": "William Hill",
+          "last_update": 1571817322,
+          "odds": {
+            "h2h": [ 1.4, 7.5, 4.75 ]
+          }
+        },
+        {
+          "site_key": "ladbrokes",
+          "site_nice": "Ladbrokes",
+          "last_update": 1571817318,
+          "odds": {
+            "h2h": [ 1.4, 7, 4.75 ]
+          }
+        }
+      ],
+      "sites_count": 10
+    }
+  ]
+}

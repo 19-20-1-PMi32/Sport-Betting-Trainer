@@ -28,6 +28,15 @@ namespace SBT.Database.Configuration
                 .HasColumnType("varchar(20)")
                 .IsRequired();
 
+			builder
+				.Property(x => x.CommenceTime)
+				.IsRequired();
+
+			builder
+                .Property(x => x.SportDataId)
+                .HasColumnType("varchar(45)")
+                .IsRequired();
+
             builder
                 .HasOne(x => x.SportData)
                 .WithMany(x => x.Games)

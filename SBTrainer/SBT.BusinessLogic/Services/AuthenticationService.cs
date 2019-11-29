@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SBT.BusinessLogic.Services
 {
-    class AuthenticationService : IAuthenticationService
+    public class AuthenticationService : IAuthenticationService
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -28,7 +28,7 @@ namespace SBT.BusinessLogic.Services
             }
             else
             {
-                throw new ArgumentException("User already exist");
+                throw new ArgumentException("Account already exist");
             }
         }
     }

@@ -10,6 +10,8 @@ namespace SBT.Core.DTO
 
         public string Team2 { get; set; }
 
+		public int CommenceTime { get; set; }
+
         public List<SiteInfo> SitesInfo { get; set; }
     }
 }
