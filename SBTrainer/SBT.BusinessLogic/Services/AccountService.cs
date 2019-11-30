@@ -15,6 +15,11 @@ namespace SBT.BusinessLogic.Services
             _unitOfWork = unitOfWork;
         }
 
+        public async Task<Account> GetAccount(string email)
+        {
+            return await _unitOfWork.AccountRepository.Get(email);
+        }
+
         public async Task UpdateAccount(Account account)
         {
             var accountEntity = await _unitOfWork.AccountRepository.Get(account.Email);

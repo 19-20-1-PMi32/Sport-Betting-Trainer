@@ -5,6 +5,6 @@ namespace SBT.BusinessLogic.Contracts
 {
     public interface IAuthenticationService
     {
-       Task CreateAccount(Account account);
+       Task<bool> CreateAccount(Account account);
     }
 }
