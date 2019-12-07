@@ -1,0 +1,76 @@
+﻿@model SBT.WebApp.ViewModels.RegisterModel
+
+
+<script>
+	function viewPassword() {
+		var passwordInput = document.getElementById('password-field');
+		var passStatus = document.getElementById('pass-status');
+		
+		if (passwordInput.type == 'password') {
+			passwordInput.type = 'text';
+			passStatus.className = 'fa fa-eye-slash';
+
+		}
+		else {
+			passwordInput.type = 'password';
+			passStatus.className = 'fa fa-eye';
+		}
+
+	}
+
+	function viewPasswordConfirm() {
+		var passwordInputConf = document.getElementById('password-field-conf');
+		var passStatusConf = document.getElementById('pass-status-conf');
+
+
+		if (passwordInputConf.type == 'password') {
+			passwordInputConf.type = 'text';
+			passStatusConf.className = 'fa fa-eye-slash';
+
+		}
+		else {
+			passwordInputConf.type = 'password';
+			passStatusConf.className = 'fa fa-eye';
+		}
+	}
+
+</script>
+
+
+<div class="position-relative vh-100 cover hero qwerty" style="height: 710px;">
+	<div class="container-fluid container-fluid-max">
+		<div class="row container4" id="id-block">
+			<h1>Registration</h1>
+		</div>
+	</div>
+
+
+	<form asp-action="Register" asp-controller="Account" asp-anti-forgery="true" class="form-position">
+		<div class="validation" asp-validation-summary="ModelOnly" />
+		<div>
+			<div>
+				<label asp-for="Email" class="label-style">Input Email</label>
+				<hr class="wh-back" />
+				<input type="email" asp-for="Email" />
+				<span asp-validation-for="Email" />
+			</div>
+			<div>
+				<label asp-for="Password" class="label-style">Input password</label>
+				<hr class="wh-back" />
+				<input type="password" asp-for="Password" id="password-field"/>
+				<span asp-validation-for="Password" />
+				<i id="pass-status" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i>
+			</div>
+			<div>
+				<label asp-for="ConfirmPassword" class="label-style">Repeat password</label>
+				<hr class="wh-back" />
+				<input type="password" asp-for="ConfirmPassword" id="password-field-conf"/>
+				<span asp-validation-for="ConfirmPassword" />
+				<i id="pass-status-conf" class="fa fa-eye" aria-hidden="true" onClick="viewPasswordConfirm()"></i>
+			</div>
+			<div>
+				<input type="submit" value="Registrate" class="btn" />
+			</div>
+		</div>
+	</form>
+</div>
