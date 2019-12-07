@@ -48,12 +48,12 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .link-style {
-	color: white;
+	color: #2454c1;
 	font-weight: bold;
 }
 
 	.link-style:hover {
-		color: #12ea23;
+		color: #0da620;
 		font-weight: bold;
 		text-decoration: underline;
 	}
@@ -113,18 +113,20 @@ for details on configuring this project to bundle and minify static web assets. 
 		z-index: 10;
 	}
 
+.h2-st {
+	margin-left: 43%
+}
 
 div.container4 {
-	margin-top: 5%;
-	height: 10em;
+	margin-top: 250px;
 	position: relative
 }
 
 	div.container4 h1 {
-		margin: 0;
+		margin-bottom: 0;
 		background: rgba(255, 255, 255, 0.83);
 		box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
-		padding: 30px 500px;
+		padding: 40px 500px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -165,17 +167,21 @@ input[type=submit] {
 
 .label-style {
 	color: #221c1c;
-	font-size: 160%;
+	font-size: 150%;
 	text-shadow: 0 0 1.5em white, 0 0 0.9em white, 0 0 0.7em white, 0 0 0.3em white;
 }
 
 .registr-link {
 	color: black;
-	padding-left: 25%;
-	padding-right: 25%;
-	padding-bottom: 2%;
+	/* padding-left: 25%; */
+	/* padding-right: 25%; */
+	padding-bottom: 0.5%;
 	padding-top: 0.5%;
 	font-size: 115%;
+	background-color: rgba(255, 255, 255, 0.73);
+	margin-left: 25%;
+	margin-right: 25%;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
 }
 
 .btn {
@@ -202,6 +208,10 @@ input[type=submit] {
 
 .qwerty {
 	background-image: url(../images/login.jpg);
+}
+
+.stat-bg {
+	background-image: url(../images/statistics.jpg);
 }
 
 /* Index */

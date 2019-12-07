@@ -1,5 +1,22 @@
 ﻿@model SBT.WebApp.ViewModels.LoginModel
 
+<style>
+	.registr-link {
+		color: black;
+		/* padding-left: 5%; */
+		/* padding-right: 5%; */
+		padding-right: 0;
+		padding-left: 0;
+		padding-bottom: 0.5%;
+		padding-top: 0.5%;
+		font-size: 115%;
+		background-color: rgba(255, 255, 255, 0.73);
+		margin-left: 25%;
+		margin-right: 25%;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+		text-align: center;
+	}
+</style>
 
 <script>
 	function viewPassword() {
@@ -20,14 +37,19 @@
 </script>
 
 
-<div class="position-relative vh-100 cover hero qwerty" style="min-height: 710px;">
-	<div class="container-fluid container-fluid-max">
-		<div class="row container4" id="id-block">
-			<h1>Login</h1>
-		</div>
-	</div>
+<div class="position-relative vh-100 cover hero qwerty" style="min-height: 900px;">
 
-	<p class="registr-link">If you don't have an account, please,  <a asp-action="Register" asp-controller="Account" class="link-style">Sign Up</a></p>
+	
+		<div class="row" id="id-block" style="margin-top: 100px;
+		background-color: rgba(255, 255, 255, 0.83);
+		padding: 10px 0px;
+		margin-bottom: 20px;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;">
+			<h2 style="margin-left: 45%">Login</h2>
+		</div>
+	
+
+	<p class="registr-link">If you don't have an account, please,  <a asp-action="Register" asp-controller="Account" class="link-style"> Sign Up</a></p>
 
 	<form asp-action="Login" asp-controller="Account" asp-anti-forgery="true" class="form-position">
 		<div class="validation" asp-validation-summary="ModelOnly" />

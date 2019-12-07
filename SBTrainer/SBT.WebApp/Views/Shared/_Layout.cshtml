@@ -4,6 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>@ViewData["Title"] - SBT.WebApp</title>
+	<link rel="icon" href="~/images/logo.png" type="image/png">
 	<link href='https://fonts.googleapis.com/css?family=Adamina' rel='stylesheet'>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
@@ -21,11 +22,11 @@
 		<link rel="stylesheet" href="~/css/site.css" />
 	</environment>
 	@*<environment exclude="Development">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-			  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-			  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-		<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-	</environment>*@
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+				  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+				  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+			<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+		</environment>*@
 	<style>
 		* {
 			box-sizing: border-box;
@@ -38,7 +39,7 @@
 		}
 
 		.bg-green {
-			background-color: rgba(2, 105, 71, 0.83);
+			background-color: rgb(2, 105, 71);
 			box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
 			border: 0px;
 		}
@@ -67,7 +68,6 @@
 		.page-header {
 			transition: background 0.5s ease-in-out;
 		}
-
 	</style>
 </head>
 <body data-spy="scroll" data-target="#navbar" data-offset="72" class="position-relative">
@@ -139,14 +139,13 @@
 	<header class="fixed-top page-header bg-green" style="margin-top: 0px; min-height: 70px; padding-bottom: 0px;">
 		<div class="container-fluid container-fluid-max ">
 			<nav id="navbar" class="navbar navbar-expand-lg navbar-dark" style="margin-bottom: 0px;">
-				<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand txt-white hov-nav-txt">SBT.WebApp</a>
+				<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand txt-white hov-nav-txt"><img src="~/images/logo_2.png"/>    SBT.WebApp</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse " id="navbarNav">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Index" class="txt-white hov-nav-txt nav-link">Home</a></li>
-						<li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="About" class="txt-white hov-nav-txt nav-link">About</a></li>
 						<li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Contact" class="txt-white hov-nav-txt nav-link">Contact</a></li>
 					</ul>
 				</div>
