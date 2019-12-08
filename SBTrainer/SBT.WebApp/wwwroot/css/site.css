@@ -171,10 +171,13 @@ input[type=submit] {
 	text-shadow: 0 0 1.5em white, 0 0 0.9em white, 0 0 0.7em white, 0 0 0.3em white;
 }
 
+
 .registr-link {
 	color: black;
-	/* padding-left: 25%; */
-	/* padding-right: 25%; */
+	/* padding-left: 5%; */
+	/* padding-right: 5%; */
+	padding-right: 0;
+	padding-left: 0;
 	padding-bottom: 0.5%;
 	padding-top: 0.5%;
 	font-size: 115%;
@@ -182,6 +185,7 @@ input[type=submit] {
 	margin-left: 25%;
 	margin-right: 25%;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+	text-align: center;
 }
 
 .btn {
@@ -190,7 +194,7 @@ input[type=submit] {
 	box-shadow: 0px 0px 24px 6px rgba(255,255,255,0.47);
 }
 
-	.btn:hover, .btn:active, .btn:focus {
+	.btn:hover, .btn:focus {
 		color: black;
 		box-shadow: 0px 0px 24px 6px rgba(255,255,255,0.47);
 		outline: none;
@@ -210,8 +214,75 @@ input[type=submit] {
 	background-image: url(../images/login.jpg);
 }
 
+/* Index */
+
+/* About */
 .stat-bg {
 	background-image: url(../images/statistics.jpg);
 }
 
-/* Index */
+.thead-bg {
+	background: rgb(205, 212, 208);
+}
+
+.mn-decrease {
+	background-color: rgb(219, 20, 20 );
+}
+
+.mn-increase {
+	background-color: rgb(64, 201, 124);
+}
+
+.btn-replenish {
+	background-color: rgb(0, 153, 77)
+}
+
+.section-title {
+	margin-top: 70px;
+}
+
+.money-form {
+	padding: 0 15%;
+}
+
+.pricing-item {
+	background-color: rgb(64, 201, 124);
+	height: 90%;
+	text-align: center;
+	padding-bottom: 60px;
+	margin-bottom: 40px;
+}
+
+	.pricing-item h3.p-title {
+		font-size: 18px;
+		color: #fff;
+		padding: 35px 30px 25px;
+		margin: 0;
+	}
+
+	.pricing-item h1.p-price {
+		font-weight: bold;
+		color: black;
+		margin: 0;
+		padding: 30px;
+		background: white;
+	}
+
+.grafico {
+	min-width: 310px;
+	max-width: 400px;
+	height: 280px;
+	margin: 0 auto
+}
+
+.money-earned-style {
+	color: green;
+}
+
+.money-style {
+	color: #159bdc;
+}
+
+.money-spent-style {
+	color: #ff2323;
+}
