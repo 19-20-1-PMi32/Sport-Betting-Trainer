@@ -311,3 +311,55 @@ input[type=submit] {
 		padding-left: 2rem;
 		transition: 0.4s;
 	}
+
+.sport-name {
+	text-align: center;
+	margin-top: 10px;
+	color: green;
+}
+
+.form-btn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 4px 20px;
+	margin: 4px 0;
+	margin-left: 8px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+
+	.form-btn:hover {
+		opacity: 1;
+	}
+
+.form-open-btn {
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+
+	.form-open-btn:hover {
+		opacity: 1;
+	}
+
+.cancelbtn {
+	padding: 14px 20px;
+	background-color: #f44336;
+}
+
+.cancelbtn, .signupbtn {
+	float: left;
+	width: 50%;
+}
+
+@media screen and (max-width: 992px) {
+	.btn-bet {
+		width: 80%;
+	}
+}
