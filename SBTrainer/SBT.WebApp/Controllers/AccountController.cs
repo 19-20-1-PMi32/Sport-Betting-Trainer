@@ -25,12 +25,21 @@ namespace SBT.WebApp.Controllers
             _authenticationService = authenticationService;
         }
 
+        /// <summary>
+        /// Login page route
+        /// </summary>
+        /// <returns>Login page</returns>
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
+        /// <summary>
+        /// Handle login form and authenticate account
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>Redirection to index page</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel model)
@@ -52,12 +61,21 @@ namespace SBT.WebApp.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Login page route
+        /// </summary>
+        /// <returns>Register page</returns>
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
 
+        /// <summary>
+        /// Handle information from register page
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>Redirection to index page</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterModel model)
@@ -84,6 +102,11 @@ namespace SBT.WebApp.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Authenticate with given email
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         private async Task Authenticate(string email)
         {
             var claims = new List<Claim>
@@ -96,6 +119,10 @@ namespace SBT.WebApp.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
 
+        /// <summary>
+        /// Deauthenticate account
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
