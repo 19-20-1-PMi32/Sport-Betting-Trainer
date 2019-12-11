@@ -16,7 +16,7 @@ namespace SBT.BusinessLogic.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task CreateAccount(Account account)
+        public async Task<bool> CreateAccount(Account account)
         {
             var isExist = (await _unitOfWork.AccountRepository.GetAll())
                 .Any(x => x.Email == account.Email);
@@ -25,10 +25,12 @@ namespace SBT.BusinessLogic.Services
             {
                 _unitOfWork.AccountRepository.Insert(account);
                 await _unitOfWork.Commit();
+
+                return true;
             }
             else
             {
-                throw new ArgumentException("Account already exist");
+                return false;
             }
         }
     }

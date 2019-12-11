@@ -1,0 +1,73 @@
+﻿@model SBT.WebApp.ViewModels.MakeBetPartialModel
+
+<style>
+	.sport-name {
+		text-align: center;
+		margin-top: 10px;
+		color: green;
+	}
+
+	.form-open-btn {
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+		opacity: 0.9;
+	}
+
+		.form-open-btn:hover {
+			opacity: 1;
+		}
+
+	.cancelbtn {
+		padding: 8px 20px;
+		background-color: #f44336;
+	}
+
+	.signupbtn {
+		padding: 8px 20px;
+		background-color: green;
+	}
+
+	.cancelbtn, .signupbtn {
+		float: left;
+		width: 50%;
+	}
+</style>
+
+<form class="modal-content" asp-action="MakeBet" asp-controller="Home" asp-anti-forgery="true" style="margin-top: 78px;width: 40%;margin-left: 60%;padding-bottom: 20px; background-color: rgb(234, 255, 242)">
+    <div class="container" style="padding-left: 20px;padding-right: 20px;">
+        <h2 class="sport-name"><strong>@Model.SportName</strong></h2>
+        <hr>
+        <p>
+            @Model.Team1 <br>
+            <input asp-for="Type" type="radio" value="first"> @Model.Team1Coef
+        </p>
+        <p>
+            Draw <br>
+            <input asp-for="Type" type="radio" value="draw" checked> @Model.DrawCoef
+        </p>
+        <p>
+            @Model.Team2 <br>
+            <input asp-for="Type" type="radio" value="second"> @Model.Team2Coef
+        </p>
+
+        <label asp-for="Money"><b>Money</b></label>
+        <input asp-for="Money" type="number" step="0.01" placeholder="Input money" required style="margin-left: 10px; width: 75%;">
+
+        <input asp-for="SportName" value="@Model.SportName" style="display: none;">
+        <input asp-for="Team1" value="@Model.Team1" style="display: none;">
+        <input asp-for="Team2" value="@Model.Team2" style="display: none;">
+        <input asp-for="Team1Coef" value="@Model.Team1Coef" style="display: none;">
+        <input asp-for="Team2Coef" value="@Model.Team2Coef" style="display: none;">
+        <input asp-for="DrawCoef" value="@Model.DrawCoef" style="display: none;">
+        <input asp-for="GameId" value="@Model.GameId" style="display: none;">
+
+        <div class="clearfix row" style="padding-top: 15px;">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn form-open-btn col" style="margin-right: 10px; margin-left: 10px">Cancel</button>
+            <button type="submit" class="signupbtn form-open-btn col" style="margin-left: 10px; margin-right: 10px">Make a bet</button>
+        </div>
+    </div>
+</form>

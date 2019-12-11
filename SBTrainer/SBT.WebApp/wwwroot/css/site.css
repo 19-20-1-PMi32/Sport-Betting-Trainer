@@ -1,37 +1,410 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+/*_Layout*/
+
+.bg-green {
+	background-color: rgba(2, 105, 71, 0.83);
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+	border: 0px;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+.txt-white {
+	color: white;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+.hov-nav-txt:hover {
+	color: black;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+.nav > li > a:hover, .nav > li > a:focus {
+	text-decoration: none;
+	background-color: white;
+}
+
+.container-fluid-max {
+	max-width: 1440px;
+}
+
+.page-header {
+	transition: background 0.5s ease-in-out;
+}
+
+	.page-header .navbar {
+		padding: 1rem 0;
+	}
+
+	.page-header .navbar-toggler {
+		border-color: white;
+	}
+
+.scroll .page-header {
+	background: rgb(0, 153, 77);
+}
+
+.link-style {
+	color: #2454c1;
+	font-weight: bold;
+}
+
+	.link-style:hover {
+		color: #0da620;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+
+.wh-back {
+	border: none;
+	height: 1px;
+	color: white;
+	background-color: white;
+}
+
+
+/* Login and Register */
+
+.row {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.cover {
+	/*background: no-repeat center center;*/
+	background-size: cover;
+	overflow: hidden;
+}
+
+.scroll .hero {
+	transform: scale(0.98);
+}
+
+.hero {
+	background-attachment: fixed;
+	transition: transform 0.5s ease-in-out;
+}
+
+	.hero .container-fluid {
+		z-index: 10;
+	}
+
+.h2-st {
+	margin-left: 43%
+}
+
+div.container4 {
+	margin-top: 250px;
+	position: relative
+}
+
+	div.container4 h1 {
+		margin-bottom: 0;
+		background: rgba(255, 255, 255, 0.83);
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+		padding: 40px 500px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%)
+	}
+
+
+input[type=email], select {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+
+input[type=text], input[type=password] {
+	width: 93%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+
+input[type=submit] {
+	background: #05994d;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+}
+
+.form-position {
+	margin-right: 25%;
+	margin-left: 25%;
+}
+
+.label-style {
+	color: #221c1c;
+	font-size: 150%;
+	text-shadow: 0 0 1.5em white, 0 0 0.9em white, 0 0 0.7em white, 0 0 0.3em white;
+}
+
+
+.registr-link {
+	color: black;
+	/* padding-left: 5%; */
+	/* padding-right: 5%; */
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 0.5%;
+	padding-top: 0.5%;
+	font-size: 115%;
+	background-color: rgba(255, 255, 255, 0.73);
+	margin-left: 25%;
+	margin-right: 25%;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+	text-align: center;
+}
+
+.btn {
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	box-shadow: 0px 0px 24px 6px rgba(255,255,255,0.47);
+}
+
+	.btn:hover, .btn:focus {
+		color: black;
+		box-shadow: 0px 0px 24px 6px rgba(255,255,255,0.47);
+		outline: none;
+		padding-right: 4rem;
+		padding-left: 4rem;
+		transition: 0.4s;
+	}
+
+
+.fa {
+	color: white;
+	font-size: 27px;
+	margin-left: 8px;
+}
+
+.qwerty {
+	background-image: url(../images/login.jpg);
+}
+
+
+/* About */
+.stat-bg {
+	background-image: url(../images/statistics.jpg);
+}
+
+.thead-bg {
+	background: rgb(205, 212, 208);
+}
+
+.mn-decrease {
+	background-color: rgb(219, 20, 20 );
+}
+
+.mn-increase {
+	background-color: rgb(64, 201, 124);
+}
+
+.btn-replenish {
+	background-color: rgb(0, 153, 77)
+}
+
+.section-title {
+	margin-top: 70px;
+}
+
+.money-form {
+	padding: 0 15%;
+}
+
+.pricing-item {
+	background-color: rgb(64, 201, 124);
+	height: 90%;
+	text-align: center;
+	padding-bottom: 60px;
+	margin-bottom: 40px;
+}
+
+	.pricing-item h3.p-title {
+		font-size: 18px;
+		color: #fff;
+		padding: 35px 30px 25px;
+		margin: 0;
+	}
+
+	.pricing-item h1.p-price {
+		font-weight: bold;
+		color: black;
+		margin: 0;
+		padding: 30px;
+		background: white;
+	}
+
+.grafico {
+	min-width: 310px;
+	max-width: 400px;
+	height: 280px;
+	margin: 0 auto
+}
+
+.money-earned-style {
+	color: green;
+}
+
+.money-style {
+	color: #159bdc;
+}
+
+.money-spent-style {
+	color: #ff2323;
+}
+
+.center-res {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.divider {
+	margin-bottom: 4%;
+}
+
+.btn-bet {
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	box-shadow: 0px 0px 24px 6px rgba(255,255,255,0.47);
+	background-color: green;
+}
+
+	.btn-bet:hover, .btn-bet:focus {
+		color: black;
+		box-shadow: 0px 0px 24px 6px rgba(255,255,255,0.47);
+		outline: none;
+		padding-right: 2rem;
+		padding-left: 2rem;
+		transition: 0.4s;
+	}
+
+.sport-name {
+	text-align: center;
+	margin-top: 10px;
+	color: green;
+}
+
+.form-btn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 4px 20px;
+	margin: 4px 0;
+	margin-left: 8px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+
+	.form-btn:hover {
+		opacity: 1;
+	}
+
+.form-open-btn {
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+
+	.form-open-btn:hover {
+		opacity: 1;
+	}
+
+.cancelbtn {
+	padding: 14px 20px;
+	background-color: #f44336;
+}
+
+.cancelbtn, .signupbtn {
+	float: left;
+	width: 50%;
+}
+
+@media screen and (max-width: 992px) {
+	.btn-bet {
+		width: 80%;
+	}
+}
+
+.home-bg {
+	background-image: url(../images/main.png);
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-family: 'Adamina';
+}
+
+.bg-green {
+	background-color: rgb(2, 105, 71);
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+	border: 0px;
+}
+
+.container-fluid-max {
+	max-width: 1440px;
+}
+
+
+.page-header {
+	transition: background 0.5s ease-in-out;
+}
+
+	.page-header .navbar {
+		padding: 1rem 0;
+	}
+
+	.page-header .navbar-toggler {
+		border-color: white;
+	}
+
+.scroll .page-header {
+	background: rgb(0, 153, 77);
+}
+
+.page-header {
+	transition: background 0.5s ease-in-out;
+}
+
+.btn-bet {
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+	background-color: green;
+	color: white;
+	border: 0;
+}
+
+	.btn-bet:hover, .btn-bet:focus {
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+		outline: none;
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+		transition: 0.4s;
+	}
+
+.home-bg {
+	background-image: url(../images/main.png);
 }
