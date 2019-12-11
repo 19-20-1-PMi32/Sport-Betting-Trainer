@@ -18,15 +18,17 @@ namespace SBT.WebApp.Controllers
         private readonly IGameService _gameService;
         private readonly ISiteService _siteService;
         private readonly IBetService _betService;
+        private readonly IAccountService _accountService;
 
         public HomeController(ISportService sportService, ISportDataService sportDataService,
-            IGameService gameService, ISiteService siteService, IBetService betService)
+            IGameService gameService, ISiteService siteService, IBetService betService, IAccountService accountService)
         {
             _sportService = sportService;
             _sportDataService = sportDataService;
             _gameService = gameService;
             _siteService = siteService;
             _betService = betService;
+            _accountService = accountService;
         }
 
         [Authorize]
@@ -140,11 +142,54 @@ namespace SBT.WebApp.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public IActionResult About()
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> About()
         {
             ViewData["Message"] = "Your application description page.";
 
-            return View();
+            var account = await _accountService.GetAccount(User.Identity.Name);
+
+            var bets = await _betService.GetBetsForUser(User.Identity.Name);
+
+            float earned = 0.0f, spent = 0.0f;
+
+            foreach (var bet in bets)
+            {
+                if (bet.Type == bet.Result)
+                {
+                    earned += bet.Coefficient * bet.Money;
+                }
+                else
+                {
+                    spent += bet.Money;
+                }
+            }
+
+            var model = new StatisticModel
+            {
+                MoneyModel = new MoneyModel()
+                {
+                    Current = account.Ballance,
+                    Earned = earned,
+                    Spent = spent
+                }
+            };
+
+            return View(model);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Replenish(StatisticModel model)
+        {
+            var account = await _accountService.GetAccount(User.Identity.Name);
+      
+            account.Ballance += model.Money;
+
+            await _accountService.UpdateAccount(account);
+
+            return RedirectToAction("About", "Home");
         }
 
         public IActionResult Contact()

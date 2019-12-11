@@ -3,6 +3,7 @@ using SBT.Database;
 using SBT.Database.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,11 @@ namespace SBT.BusinessLogic.Services
         {
             _unitOfWork.BetRepository.Insert(bet);
             await _unitOfWork.Commit();
+        }
+
+        public async Task<IEnumerable<Bet>> GetBetsForUser(string email)
+        {
+            return (await _unitOfWork.BetRepository.GetAll()).Where(x => x.AccountEmail == email);
         }
     }
 }

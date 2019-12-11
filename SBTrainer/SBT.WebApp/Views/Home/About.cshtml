@@ -1,5 +1,6 @@
-﻿@{
-	ViewData["Title"] = "About";
+﻿@model SBT.WebApp.ViewModels.StatisticModel
+@{
+    ViewData["Title"] = "About";
 }
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -7,493 +8,496 @@
 
 <script>
 
-	document.addEventListener("DOMContentLoaded", function (event) {
+    document.addEventListener("DOMContentLoaded", function (event) {
 
-		Highcharts.chart('grafico1', {
+        Highcharts.chart('grafico1', {
 
-			credits: {
-				enabled: false
-			},
-			title: {
-				text: 'Earned money'
-			},
-
-
-			yAxis: {
-				title: {
-					text: ' $'
-				}
-			},
-			legend: {
-				layout: 'vertical',
-				align: 'right',
-				verticalAlign: 'middle'
-			},
-
-			plotOptions: {
-				series: {
-					pointStart: 1
-				}
-			},
-
-			series: [{
-				name: 'Team 1',
-				data: [200, 50, 75, 350, 220, 250]
-			}, {
-				name: 'Draw',
-				data: [20, 50, 20, 10, 75, 25]
-			}, {
-				name: 'Team 2',
-				data: [100, 500, 50, 25, 120, 75]
-			}]
-
-		});
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: 'Earned money'
+            },
 
 
+            yAxis: {
+                title: {
+                    text: ' $'
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
 
-		Highcharts.chart('grafico2', {
-			chart: {
-				type: 'areaspline'
-			},
+            plotOptions: {
+                series: {
+                    pointStart: 1
+                }
+            },
 
-			credits: {
-				enabled: false
-			},
-			title: {
-				text: 'Last week bets'
-			},
+            series: [{
+                name: 'Team 1',
+                data: [200, 50, 75, 350, 220, 250]
+            }, {
+                name: 'Draw',
+                data: [20, 50, 20, 10, 75, 25]
+            }, {
+                name: 'Team 2',
+                data: [100, 500, 50, 25, 120, 75]
+            }]
 
-
-			yAxis: {
-				title: {
-					text: 'Money'
-				}
-			},
-			legend: {
-				layout: 'vertical',
-				align: 'right',
-				verticalAlign: 'middle'
-			},
-
-			plotOptions: {
-				series: {
-					pointStart: 1
-				}
-			},
-
-			series: [{
-				name: 'Team 1',
-				data: [150, 0, 0, 100, 75, 20, 0]
-			}, {
-				name: 'Draw',
-				data: [50, 210, 0, 0, 0, 0, 30]
-			}, {
-				name: 'Team 2',
-				data: [0, 0, 250, 0, 350, 50, 0]
-			}]
-
-		});
+        });
 
 
 
+        Highcharts.chart('grafico2', {
+            chart: {
+                type: 'areaspline'
+            },
 
-		Highcharts.chart('grafico3', {
-			chart: {
-				type: 'column'
-			},
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: 'Last week bets'
+            },
 
-			credits: {
-				enabled: false
-			},
-			title: {
-				text: 'Number of games'
-			},
-			xAxis: {
-				categories: ['Team 1', 'Team 2']
-			},
-			yAxis: {
-				title: {
-					text: 'times'
-				},
-				stackLabels: {
-					enabled: true,
-					style: {
-						fontWeight: 'bold',
-						color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
-					}
-				}
-			},
-			legend: {
-				align: 'center',
-				verticalAlign: 'bottom',
-				backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-				borderColor: '#CCC',
-				shadow: false
-			},
-			tooltip: {
-				headerFormat: '<b>{point.x}</b><br/>',
-				pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
-			},
-			plotOptions: {
-				column: {
-					stacking: 'normal',
-					dataLabels: {
-						enabled: false,
-						color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
-					}
-				}
-			},
-			series: [{
-				name: 'Lose',
-				data: [4, 6],
-				color: '#FA5858'
 
-			}, {
-				name: 'Win',
-				data: [10, 11],
-				color: '#58FA58'
-			}, {
-				name: 'Draw',
-				data: [2, 1],
-				color: '#FE9A2E'
+            yAxis: {
+                title: {
+                    text: 'Money'
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
 
-			}]
-		});
+            plotOptions: {
+                series: {
+                    pointStart: 1
+                }
+            },
+
+            series: [{
+                name: 'Team 1',
+                data: [150, 0, 0, 100, 75, 20, 0]
+            }, {
+                name: 'Draw',
+                data: [50, 210, 0, 0, 0, 0, 30]
+            }, {
+                name: 'Team 2',
+                data: [0, 0, 250, 0, 350, 50, 0]
+            }]
+
+        });
 
 
 
-		Highcharts.chart('grafico4', {
 
-			credits: {
-				enabled: false
-			},
-			chart: {
-				type: 'bubble',
-				plotBorderWidth: 1,
-				zoomType: 'xy'
-			},
+        Highcharts.chart('grafico3', {
+            chart: {
+                type: 'column'
+            },
 
-			legend: {
-				enabled: true
-			},
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: 'Number of games'
+            },
+            xAxis: {
+                categories: ['Team 1', 'Team 2']
+            },
+            yAxis: {
+                title: {
+                    text: 'times'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                    }
+                }
+            },
+            legend: {
+                align: 'center',
+                verticalAlign: 'bottom',
+                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                borderColor: '#CCC',
+                shadow: false
+            },
+            tooltip: {
+                headerFormat: '<b>{point.x}</b><br/>',
+                pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: false,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                    }
+                }
+            },
+            series: [{
+                name: 'Lose',
+                data: [4, 6],
+                color: '#FA5858'
 
-			title: {
-				text: 'Games'
-			},
+            }, {
+                name: 'Win',
+                data: [10, 11],
+                color: '#58FA58'
+            }, {
+                name: 'Draw',
+                data: [2, 1],
+                color: '#FE9A2E'
+
+            }]
+        });
 
 
-			xAxis: {
-				min: 0, max: 100,
-				gridLineWidth: 1,
-		
-				plotLines: [{
-					color: 'red',
-					dashStyle: 'dot',
-					width: 1,
-					value: 25,
-					zIndex: 3
-				}, {
-					color: 'black',
-					dashStyle: 'dot',
-					width: 2,
-					value: 50,
-					zIndex: 3
-				}, {
-					color: 'green',
-					dashStyle: 'dot',
-					width: 1,
-					value: 75,
-					zIndex: 3
-				}
-				]
-			},
 
-			yAxis: {
-				min: 0, max: 100,
-				startOnTick: false,
-				endOnTick: false,
-				title: {
-					text: 'Games'
-				},
-				labels: {
-					format: '{value} %'
-				},
-				maxPadding: 0.2,
-				plotLines: [{
-					color: 'red',
-					dashStyle: 'dot',
-					width: 1,
-					value: 25,
-					zIndex: 3
-				}, {
-					color: 'black',
-					dashStyle: 'dot',
-					width: 2,
-					value: 50,
-					zIndex: 3
-				}, {
-					color: 'green',
-					dashStyle: 'dot',
-					width: 1,
-					value: 75,
-					zIndex: 3
-				}]
-			},
+        Highcharts.chart('grafico4', {
 
-			tooltip: {
-				useHTML: true,
-				headerFormat: '<table>',
-				pointFormat: '<tr><th>CAC:</th><td>{point.x}%</td></tr>' +
-					'<tr><th>Vendas:</th><td>{point.y}%</td></tr>' +
-					'<tr><th>Volume:</th><td>R$ {point.z} k</td></tr>',
-				footerFormat: '</table>',
-				followPointer: true
-			},
+            credits: {
+                enabled: false
+            },
+            chart: {
+                type: 'bubble',
+                plotBorderWidth: 1,
+                zoomType: 'xy'
+            },
 
-			plotOptions: {
-				series: {
-					dataLabels: {
-						enabled: true,
-						format: '{point.code}'
-					}
-				}
-			},
+            legend: {
+                enabled: true
+            },
 
-			series: [{
-				name: 'Win',
-				minSize: '10%',
-				maxSize: '20%',
-				color: '#0c0',
-				data: [
-					{ x: 80.4, y: 62.5, z: 50, code: 'Team 2', name: 'Team 2' },
-					{ x: 25, y: 65, z: 32, code: 'Team 1', name: 'Team 1' }
-				]
-			},
-			{
-				name: 'Lose',
-				minSize: '10%',
-				maxSize: '20%',
-				color: '#c00',
-				data: [
-					{ x: 25, y: 15, z: 16, code: 'Team 1', name: 'Team 1' },
-					{ x: 86.5, y: 10, z: 17, code: 'Team 2', name: 'Team 2' }
-				]
-			},
+            title: {
+                text: 'Games'
+            },
 
-			{
-				name: 'Draw',
-				minSize: '10%',
-				maxSize: '20%',
-				color: '#fa0',
-				data: [
-					{ x: 80.8, y: 48.5, z: 15, code: 'Draw', name: 'Draw' }
-				]
-			}
-			]
 
-		});
+            xAxis: {
+                min: 0, max: 100,
+                gridLineWidth: 1,
 
-	});
+                plotLines: [{
+                    color: 'red',
+                    dashStyle: 'dot',
+                    width: 1,
+                    value: 25,
+                    zIndex: 3
+                }, {
+                    color: 'black',
+                    dashStyle: 'dot',
+                    width: 2,
+                    value: 50,
+                    zIndex: 3
+                }, {
+                    color: 'green',
+                    dashStyle: 'dot',
+                    width: 1,
+                    value: 75,
+                    zIndex: 3
+                }
+                ]
+            },
+
+            yAxis: {
+                min: 0, max: 100,
+                startOnTick: false,
+                endOnTick: false,
+                title: {
+                    text: 'Games'
+                },
+                labels: {
+                    format: '{value} %'
+                },
+                maxPadding: 0.2,
+                plotLines: [{
+                    color: 'red',
+                    dashStyle: 'dot',
+                    width: 1,
+                    value: 25,
+                    zIndex: 3
+                }, {
+                    color: 'black',
+                    dashStyle: 'dot',
+                    width: 2,
+                    value: 50,
+                    zIndex: 3
+                }, {
+                    color: 'green',
+                    dashStyle: 'dot',
+                    width: 1,
+                    value: 75,
+                    zIndex: 3
+                }]
+            },
+
+            tooltip: {
+                useHTML: true,
+                headerFormat: '<table>',
+                pointFormat: '<tr><th>CAC:</th><td>{point.x}%</td></tr>' +
+                    '<tr><th>Vendas:</th><td>{point.y}%</td></tr>' +
+                    '<tr><th>Volume:</th><td>R$ {point.z} k</td></tr>',
+                footerFormat: '</table>',
+                followPointer: true
+            },
+
+            plotOptions: {
+                series: {
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.code}'
+                    }
+                }
+            },
+
+            series: [{
+                name: 'Win',
+                minSize: '10%',
+                maxSize: '20%',
+                color: '#0c0',
+                data: [
+                    { x: 80.4, y: 62.5, z: 50, code: 'Team 2', name: 'Team 2' },
+                    { x: 25, y: 65, z: 32, code: 'Team 1', name: 'Team 1' }
+                ]
+            },
+            {
+                name: 'Lose',
+                minSize: '10%',
+                maxSize: '20%',
+                color: '#c00',
+                data: [
+                    { x: 25, y: 15, z: 16, code: 'Team 1', name: 'Team 1' },
+                    { x: 86.5, y: 10, z: 17, code: 'Team 2', name: 'Team 2' }
+                ]
+            },
+
+            {
+                name: 'Draw',
+                minSize: '10%',
+                maxSize: '20%',
+                color: '#fa0',
+                data: [
+                    { x: 80.8, y: 48.5, z: 15, code: 'Draw', name: 'Draw' }
+                ]
+            }
+            ]
+
+        });
+
+    });
 
 </script>
 
 @if (User.Identity.IsAuthenticated)
 {
-	<div id="home" class="position-relative vh-100 cover hero stat-bg" style="min-height: 900px;">
-		<div class="container-fluid container-fluid-max">
-			<div class="row container4" id="id-block">
-				<h1>STATISTICS</h1>
-			</div>
-		</div>
-	</div>
+    <div id="home" class="position-relative vh-100 cover hero stat-bg" style="min-height: 900px;">
+        <div class="container-fluid container-fluid-max">
+            <div class="row container4" id="id-block">
+                <h1>STATISTICS</h1>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="money-form" style="background-color: rgb(204, 255, 204)">
+        <form asp-action="Replenish" asp-controller="Home" asp-anti-forgery="true" class="form-position">
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="section-title mb-3"><strong>Account replenishment</strong></h2>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                </div>
+                <input type="number" asp-for="Money" class="form-control" aria-label="Amount (to the nearest dollar)" style="margin-top: 0px;">
+            </div>
+            <p><button type="submit" class="btn btn-replenish txt-white">Replenish</button></p>
+            <br />
+        </form>
+    </div>
 
 
 
-	<div class="money-form" style="background-color: rgb(204, 255, 204)">
-		<div class="row mb-4">
-			<div class="col-12 text-center">
-				<h2 class="section-title mb-3"><strong>Account replenishment</strong></h2>
-			</div>
-		</div>
-		<div class="input-group mb-3">
-			<div class="input-group-prepend">
-				<span class="input-group-text">$</span>
-			</div>
-			<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" style="margin-top: 0px;">
-		</div>
-		<p><a href="" class="btn btn-replenish txt-white">Replenish</a></p>
-		<br />
-	</div>
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h2 class="section-title mb-3"><strong>Information about money</strong></h2>
+        </div>
+    </div>
+    <div class="container my-4">
+        <hr>
+        <br />
+        <div class="text-center">
+            <h2 class="h1 mb-0 money-style">$@Model.MoneyModel.Current</h2>
+            <p><strong>Current account state</strong></p>
+        </div>
+        <br />
+        <hr>
+        <br />
+        <div class="text-center">
+            <h2 class="h1 mb-0 money-earned-style">$@Model.MoneyModel.Earned</h2>
+            <p><strong>Earned money</strong></p>
+        </div>
+        <br />
+        <hr>
+        <br />
+        <div class="text-center">
+            <h2 class="h1 mb-0 money-spent-style">$@Model.MoneyModel.Spent</h2>
+            <p><strong>Spent money</strong></p>
+        </div>
+        <br />
+    </div>
+
+    <section class="p-70" id="price" style="background-color: rgb(242, 242, 242)">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title mb-3"><strong>Earned money</strong></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-item hov-shadow">
+                        <h3 class="p-title">Team 1</h3>
+                        <h1 class="p-price">$950.00</h1>
+                        <h3 class="p-title">Matches</h3>
+                        <h1 class="p-price">9</h1>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-item hov-shadow">
+                        <h3 class="p-title">Draw</h3>
+                        <h1 class="p-price">$250.50</h1>
+                        <h3 class="p-title">Matches</h3>
+                        <h1 class="p-price">4</h1>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 ch-position">
+                    <div class="pricing-item hov-shadow">
+                        <h3 class="p-title">Team 2</h3>
+                        <h1 class="p-price">$1349.50</h1>
+                        <h3 class="p-title">Matches</h3>
+                        <h1 class="p-price">12</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-	<div class="row mb-4">
-		<div class="col-12 text-center">
-			<h2 class="section-title mb-3"><strong>Information about money</strong></h2>
-		</div>
-	</div>
-	<div class="container my-4">
-		<hr>
-		<br />
-		<div class="text-center">
-			<h2 class="h1 mb-0 money-style">$5,560</h2>
-			<p><strong>Current account state</strong></p>
-		</div>
-		<br />
-		<hr>
-		<br />
-		<div class="text-center">
-			<h2 class="h1 mb-0 money-earned-style">$2,550</h2>
-			<p><strong>Earned money</strong></p>
-		</div>
-		<br />
-		<hr>
-		<br />
-		<div class="text-center">
-			<h2 class="h1 mb-0 money-spent-style">$6,210</h2>
-			<p><strong>Spent money</strong></p>
-		</div>
-		<br />
-	</div>
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h2 class="section-title mb-3"><strong>Last matches</strong></h2>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <table class="table table-condensed table-bordered table-hover small">
+                <thead class="thead-bg">
+                    <tr>
+                        <th>Date</th>
+                        <th>Team 1</th>
+                        <th>Team 2</th>
+                        <th>Coef 1</th>
+                        <th>Coef draw</th>
+                        <th>Coef 2</th>
+                        <th>Winner</th>
+                        <th>Money</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-	<section class="p-70" id="price" style="background-color: rgb(242, 242, 242)">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-12 text-center">
-					<h2 class="section-title mb-3"><strong>Earned money</strong></h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="pricing-item hov-shadow">
-						<h3 class="p-title">Team 1</h3>
-						<h1 class="p-price">$950.00</h1>
-						<h3 class="p-title">Matches</h3>
-						<h1 class="p-price">9</h1>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="pricing-item hov-shadow">
-						<h3 class="p-title">Draw</h3>
-						<h1 class="p-price">$250.50</h1>
-						<h3 class="p-title">Matches</h3>
-						<h1 class="p-price">4</h1>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 ch-position">
-					<div class="pricing-item hov-shadow">
-						<h3 class="p-title">Team 2</h3>
-						<h1 class="p-price">$1349.50</h1>
-						<h3 class="p-title">Matches</h3>
-						<h1 class="p-price">12</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                    <tr>
+                        <td>07.12.2019</td>
+                        <td>Dynamo</td>
+                        <td>Shakhtar</td>
+                        <td>2</td>
+                        <td>0.2</td>
+                        <td>3.72</td>
+                        <td>Shakhar</td>
+                        <td class="mn-increase">+100.00</td>
 
+                    </tr>
 
-	<div class="row mb-4">
-		<div class="col-12 text-center">
-			<h2 class="section-title mb-3"><strong>Last matches</strong></h2>
-		</div>
-	</div>
-	<div class="container">
-		<div>
-			<table class="table table-condensed table-bordered table-hover small">
-				<thead class="thead-bg">
-					<tr>
-						<th>Date</th>
-						<th>Team 1</th>
-						<th>Team 2</th>
-						<th>Coef 1</th>
-						<th>Coef draw</th>
-						<th>Coef 2</th>
-						<th>Winner</th>
-						<th>Money</th>
-					</tr>
-				</thead>
-				<tbody>
-
-					<tr>
-						<td>07.12.2019</td>
-						<td>Dynamo</td>
-						<td>Shakhtar</td>
-						<td>2</td>
-						<td>0.2</td>
-						<td>3.72</td>
-						<td>Shakhar</td>
-						<td class="mn-increase">+100.00</td>
-
-					</tr>
-
-					<tr>
-						<td>04.12.2019</td>
-						<td>Shakhar</td>
-						<td>Zoria</td>
-						<td>3.5</td>
-						<td>0.1</td>
-						<td>0.3</td>
-						<td>Shakhar</td>
-						<td class="mn-increase">+200.00</td>
-					</tr>
-					<tr>
-						<td>26.11.2019</td>
-						<td>Hoverla</td>
-						<td>Budivelnyk</td>
-						<td>2.7</td>
-						<td>0.5</td>
-						<td>1.1</td>
-						<td>Hoverla</td>
-						<td class="mn-decrease">-250.00</td>
-					</tr>
-					<tr>
-						<td>21.11.2019</td>
-						<td>Atlantic</td>
-						<td>Khimik</td>
-						<td>1.5</td>
-						<td>1.2</td>
-						<td>0.9</td>
-						<td>Khimik</td>
-						<td class="mn-increase">+350.00</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+                    <tr>
+                        <td>04.12.2019</td>
+                        <td>Shakhar</td>
+                        <td>Zoria</td>
+                        <td>3.5</td>
+                        <td>0.1</td>
+                        <td>0.3</td>
+                        <td>Shakhar</td>
+                        <td class="mn-increase">+200.00</td>
+                    </tr>
+                    <tr>
+                        <td>26.11.2019</td>
+                        <td>Hoverla</td>
+                        <td>Budivelnyk</td>
+                        <td>2.7</td>
+                        <td>0.5</td>
+                        <td>1.1</td>
+                        <td>Hoverla</td>
+                        <td class="mn-decrease">-250.00</td>
+                    </tr>
+                    <tr>
+                        <td>21.11.2019</td>
+                        <td>Atlantic</td>
+                        <td>Khimik</td>
+                        <td>1.5</td>
+                        <td>1.2</td>
+                        <td>0.9</td>
+                        <td>Khimik</td>
+                        <td class="mn-increase">+350.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
 
-		<div class="row mb-4">
-			<div class="col-12 text-center">
-				<h2 class="section-title mb-3"><strong>Match statistics</strong></h2>
-			</div>
-		</div>
-		<br />
-		<br />
-		<div class="row">
-			<div class="col-md-6">
-				<div id='grafico1' class="grafico"></div>
-			</div>
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2 class="section-title mb-3"><strong>Match statistics</strong></h2>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-6">
+                <div id='grafico1' class="grafico"></div>
+            </div>
 
-			<div class="col-md-6">
-				<div id='grafico2' class="grafico"></div>
-			</div>
-		</div>
-		<br />
-		<br />
-		<br />
+            <div class="col-md-6">
+                <div id='grafico2' class="grafico"></div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
 
-		<div class="row">
-			<div class="col-md-6">
-				<div id='grafico3' class="grafico"></div>
-			</div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id='grafico3' class="grafico"></div>
+            </div>
 
-			<div class="col-md-6">
-				<div id='grafico4' class="grafico" style="height: 400px;"></div>
-			</div>
-		</div>
-		<br />
-	</div>
-	<br />
-	<br />
+            <div class="col-md-6">
+                <div id='grafico4' class="grafico" style="height: 400px;"></div>
+            </div>
+        </div>
+        <br />
+    </div>
+    <br />
+    <br />
 
 }
 
