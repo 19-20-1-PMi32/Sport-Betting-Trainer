@@ -66,27 +66,6 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
-
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
-
-#qrCode {
-    margin: 15px;
-}
-
-@media screen and (max-width: 767px) {
-    .carousel-caption {
-        display: none;
-    }
-}
-
-
 /* Login and Register */
 
 .row {
@@ -214,7 +193,6 @@ input[type=submit] {
 	background-image: url(../images/login.jpg);
 }
 
-/* Index */
 
 /* About */
 .stat-bg {
@@ -362,4 +340,71 @@ input[type=submit] {
 	.btn-bet {
 		width: 80%;
 	}
+}
+
+.home-bg {
+	background-image: url(../images/main.png);
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-family: 'Adamina';
+}
+
+.bg-green {
+	background-color: rgb(2, 105, 71);
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+	border: 0px;
+}
+
+.container-fluid-max {
+	max-width: 1440px;
+}
+
+
+.page-header {
+	transition: background 0.5s ease-in-out;
+}
+
+	.page-header .navbar {
+		padding: 1rem 0;
+	}
+
+	.page-header .navbar-toggler {
+		border-color: white;
+	}
+
+.scroll .page-header {
+	background: rgb(0, 153, 77);
+}
+
+.page-header {
+	transition: background 0.5s ease-in-out;
+}
+
+.btn-bet {
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+	background-color: green;
+	color: white;
+	border: 0;
+}
+
+	.btn-bet:hover, .btn-bet:focus {
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px 0px;
+		outline: none;
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+		transition: 0.4s;
+	}
+
+.home-bg {
+	background-image: url(../images/main.png);
 }
