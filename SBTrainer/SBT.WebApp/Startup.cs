@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SBT.BusinessLogic.Services;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace SBT.WebApp
 {
@@ -44,6 +45,11 @@ namespace SBT.WebApp
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //services.AddHostedService<SportsUpdateService>();
             //services.AddHostedService<OddsUpdateService>();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Client API", Version = "v1" });
+            });
 
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -87,6 +93,12 @@ namespace SBT.WebApp
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Client API");
             });
         }
     }

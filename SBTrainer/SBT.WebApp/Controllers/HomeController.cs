@@ -30,7 +30,10 @@ namespace SBT.WebApp.Controllers
             _betService = betService;
             _accountService = accountService;
         }
-
+        /// <summary>
+        /// Obtain information from database and put it in SportSectionModel
+        /// </summary>
+        /// <returns>Index page</returns>
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -85,6 +88,11 @@ namespace SBT.WebApp.Controllers
             return View(sportSectionModel);
         }
 
+        /// <summary>
+        /// Get information when make bet button was pushed and put it into MakeBetPartialModel
+        /// </summary>
+        /// <param name="id">Game id</param>
+        /// <returns>Partial view to display make bet form</returns>
         [HttpPost]
         public async Task<IActionResult> Bet(int id)
         {
@@ -107,6 +115,11 @@ namespace SBT.WebApp.Controllers
             return PartialView(model);
         }
 
+        /// <summary>
+        /// Handle information from make bet form and update bet entity
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>Redirection to index page</returns>
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> MakeBet(MakeBetPartialModel model)
@@ -142,6 +155,10 @@ namespace SBT.WebApp.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        /// <summary>
+        /// Get information about account
+        /// </summary>
+        /// <returns>Page with account statistic</returns>
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> About()
@@ -179,6 +196,11 @@ namespace SBT.WebApp.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Handle replenish form and update account ballance
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>Redirection to About page</returns>
         [Authorize]
         [HttpPost]
         public async Task<IActionResult> Replenish(StatisticModel model)
@@ -192,6 +214,10 @@ namespace SBT.WebApp.Controllers
             return RedirectToAction("About", "Home");
         }
 
+        /// <summary>
+        /// Contact page route
+        /// </summary>
+        /// <returns>Contact page</returns>
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
@@ -199,11 +225,19 @@ namespace SBT.WebApp.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Privacy page route
+        /// </summary>
+        /// <returns>Privacy page</returns>
         public IActionResult Privacy()
         {
             return View();
         }
 
+        /// <summary>
+        /// Privacy page route
+        /// </summary>
+        /// <returns>Error page</returns>
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
